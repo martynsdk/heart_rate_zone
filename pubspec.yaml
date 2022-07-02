@@ -71,6 +71,8 @@ flutter:
   assets:
     - lib/i18n/
     - assets/main_icon.jpg
+    - assets/johndoe.jpg
+    - assets/janedoe.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
