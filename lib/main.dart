@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         LocalJsonLocalization.delegate,
       ],
       debugShowCheckedModeBanner: false,
-      title: "title".i18n(),
+      title: "Heart Rate Zone",
       theme: ThemeData(
         useMaterial3: true,
         // This is the theme of your application.
