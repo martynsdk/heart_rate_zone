@@ -13,7 +13,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  static final String title = 'Heart Rate Zone';
+  static const String title = 'Heart Rate Zone';
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +45,8 @@ class MyApp extends StatelessWidget {
       title: "Heart Rate Zone",
       theme: ThemeData(
         useMaterial3: true,
-        primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: title),
+      home: const MyHomePage(title: title),
     );
   }
 }
@@ -105,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: AnimatedRailWidget(
                 child: isExtended
                     ? Row(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.logout,
                       color: Colors.white,
@@ -124,8 +123,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
                     : const Icon(Icons.logout, color: Colors.white),
               ),
-
-
               destinations: const [
                 NavigationRailDestination(
                   icon: Icon(Icons.home),
@@ -150,11 +147,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => print('a'),
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
 
 

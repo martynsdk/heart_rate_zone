@@ -4,8 +4,8 @@ class AnimatedRailWidget extends StatelessWidget {
   final Widget child;
 
   const AnimatedRailWidget({
-    @required this.child,
-    Key key,
+    required this.child,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -19,8 +19,9 @@ class AnimatedRailWidget extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
           child: FloatingActionButton.extended(
-            backgroundColor: Colors.red,
-            label: child,
+            backgroundColor: Colors.black,
+            //label: child,
+            label: const Text("Logout"),
             isExtended: animation.status != AnimationStatus.dismissed,
             onPressed: () {},
           ),

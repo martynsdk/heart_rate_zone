@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class GridViewWidget extends StatelessWidget {
-  final List<String> urlImages;
 
   const GridViewWidget({
-    @required this.urlImages,
-    Key key,
+    required this.urlImages,
+    Key? key,
   }) : super(key: key);
+
+  final List<String> urlImages;
 
   @override
   Widget build(BuildContext context) => GridView(
