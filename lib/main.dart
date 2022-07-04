@@ -45,6 +45,9 @@ class MyApp extends StatelessWidget {
       title: "Heart Rate Zone",
       theme: ThemeData(
         useMaterial3: true,
+        primaryColor: Colors.green,
+        secondaryHeaderColor: Colors.greenAccent,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
       ),
       home: const MyHomePage(title: title),
     );
@@ -65,15 +68,16 @@ class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
   bool isExtended = true;
 
-  final selectedColor = Colors.white;
-  final unselectedColor = Colors.white60;
-  final labelStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  //final selectedColor = Colors.white;
+  //final unselectedColor = Colors.white60;
+  //final labelStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 40);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(widget.title, style: const TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
       body: Center(
@@ -81,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             NavigationRail(
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).secondaryHeaderColor,
               extended: isExtended,
               selectedIndex: index,
               onDestinationSelected: (index) =>
@@ -92,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Ink.image(
                   width: 62,
                   height: 62,
-                  fit: BoxFit.fitHeight,
+                  fit: BoxFit.fill,
                   image: const NetworkImage(
-                    'https://images.unsplash.com/photo-1485893086445-ed75865251e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80',
                   ),
                   child: InkWell(
                     onTap: () => setState(() => isExtended = !isExtended),
@@ -104,10 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: AnimatedRailWidget(
                 child: isExtended
                     ? Row(
-                  children: [
+                  children: const [
                     Icon(
                       Icons.logout,
-                      color: Colors.white,
                       size: 28,
                     ),
                     SizedBox(width: 12),
@@ -116,12 +119,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
                       ),
                     ),
                   ],
                 )
-                    : const Icon(Icons.logout, color: Colors.white),
+                    : const Icon(Icons.logout),
               ),
               destinations: const [
                 NavigationRailDestination(
@@ -155,15 +157,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget buildPages() {
     switch (index) {
       case 0:
-        return HomePage();
+        return const HomePage();
       case 1:
-        return FavouritesPage();
+        return const FavouritesPage();
       case 2:
-        return ProfilePage();
+        return const ProfilePage();
       case 3:
-        return SettingsPage();
+        return const SettingsPage();
       default:
-        return HomePage();
+        return const HomePage();
     }
   }
 }

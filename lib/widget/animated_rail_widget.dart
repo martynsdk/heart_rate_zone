@@ -14,14 +14,14 @@ class AnimatedRailWidget extends StatelessWidget {
 
     return AnimatedBuilder(
       animation: animation,
-      builder: (context, child) => Container(
+      builder: (context, child) => SizedBox(
         height: 56,
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
           child: FloatingActionButton.extended(
-            backgroundColor: Colors.black,
+            backgroundColor: Theme.of(context).primaryColor,
             //label: child,
-            label: const Text("Logout"),
+            label: const Text("Logout", style: TextStyle(color: Colors.white)),
             isExtended: animation.status != AnimationStatus.dismissed,
             onPressed: () {},
           ),
