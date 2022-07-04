@@ -1,4 +1,7 @@
 {
   "title": "Heart Rate Zone",
-  "profiles": "Profiles"
+  "home_page": "Home Page",
+  "profiles": "Profiles",
+  "settings": "Settings",
+  "health_tips": "Health Tips"
 }

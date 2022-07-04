@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.heart_rate_zone">
+    package="home.heart_rate_zone">
    <application
         android:label="Heart Rate Zone"
         android:name="${applicationName}"

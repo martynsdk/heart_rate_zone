@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:localization/localization.dart';
-import 'package:heart_rate_zone/page/favourites_page.dart';
+import 'package:heart_rate_zone/page/health_tips.dart';
 import 'package:heart_rate_zone/page/home_page.dart';
 import 'package:heart_rate_zone/page/profile_page.dart';
 import 'package:heart_rate_zone/page/settings_page.dart';
@@ -125,23 +125,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
                     : const Icon(Icons.logout),
               ),
-              destinations: const [
+              destinations: [
                 NavigationRailDestination(
-                  icon: Icon(Icons.home),
-                  label: Text('Home'),
+                  icon: const Icon(Icons.home),
+                  label: Text("home_page".i18n()),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.favorite_border),
-                  selectedIcon: Icon(Icons.favorite),
-                  label: Text('Favourites'),
+                  icon: const Icon(Icons.favorite_border),
+                  selectedIcon: const Icon(Icons.favorite),
+                  label: Text("health_tips".i18n()),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.face),
-                  label: Text('Profile'),
+                  icon: const Icon(Icons.face),
+                  label: Text("profiles".i18n()),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.settings),
-                  label: Text('Settings'),
+                  icon: const Icon(Icons.settings),
+                  label: Text("settings".i18n()),
                 ),
               ],
             ),
@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
       case 0:
         return const HomePage();
       case 1:
-        return const FavouritesPage();
+        return const HealthTips();
       case 2:
         return const ProfilePage();
       case 3:
